@@ -48,4 +48,3 @@ services:
       MYSQL_LOWER_CASE_TABLE_NAMES: 1 # for caso insensitive file systems
     networks:
       - gd-fs-network
-

@@ -1,28 +1,3 @@
-<?php
-
-$dsn = 'mysql:host=gd-fs-docker-mysql;port=3306;dbname=gdfs';
-$user = 'gdfs';
-$password = 'gdsecret';
-
-$ok = true;
-
-try {
-    $db = new PDO($dsn, $user, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-
-    $sql = "select curdate() from dual";
-
-    $statement = $db->prepare($sql);
-
-    $statement->execute();
-
-    $now = $statement->fetchColumn();
-
-    $ok = ($now !== FALSE);
-
-} catch (PDOException $e) {
-    $ok = false;
-}
-?>
 <!doctype html>
 <html lang="pt_BR">
 <head>
@@ -33,6 +8,10 @@ try {
     <title>Gaudium Software - Prova Desenvolvedor Full Stack</title>
 </head>
 <body>
+<?php 
+    require_once("controller/calculo.php"); 
+    require_once("classes/crud.php");
+?>
 <main role="main">
     <div class="container mx-auto">
         <div class="row">
@@ -43,15 +22,22 @@ try {
         </div>
         <div class="row pt-5">
             <div class="jumbotron mx-auto">
-                <?php if ($ok) { ?>
-                    <div class="alert alert-success mx-auto" role="alert">
-                        Ambiente instalado com sucesso!
+                <form action="submit" class="container mt-4 contact-form-area" method="post">
+                    <div class="form-group col">
+                        <label for="" class="required">Cidade</label>
+                        <input type="text" class="form-control-file form-file" id="" placeholder="" name=""  required>
                     </div>
-                <?php } else { ?>
-                    <div class="alert alert-danger mx-auto" role="alert">
-                        Não foi possível conectar ao banco de dados.
+                    <div class="form-group col">
+                        <label for="" class="required">Distância</label>
+                        <input type="number" step="0.01" class="form-control-file form-file" id="" placeholder="" name=""  required>
                     </div>
-                <?php } ?>
+                    <div class="form-group col">
+                        <label for="" class="required">Duração</label>
+                        <input type="number" step="0.01" class="form-control-file form-file" id="" placeholder="" name=""  required>
+                    </div>
+                    
+                    <button style="background-color: green; color:antiquewhite;" type="submit" class="btn float-right mt-15" name="calcular">Calcular</button>
+                </form>
             </div>
         </div>
     </div> <!-- /container -->

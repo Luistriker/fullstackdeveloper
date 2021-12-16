@@ -1,0 +1,23 @@
+CREATE TABLE `historico` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cidade` varchar(255) NOT NULL,
+  `categoria` varchar(255) NOT NULL,
+  `dataPublicacao` datetime NOT NULL,
+  `valor` DECIMAL(6,2) NOT NULL,
+  PRIMARY KEY (id)
+)
+
+CREATE TABLE `cidade` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+)
+
+CREATE TABLE `categoria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `bandeirada` DECIMAL(6,2) NOT NULL,
+  `valorHora` DECIMAL(6,2) NOT NULL,
+  `valorKm` DECIMAL(6,2) NOT NULL,
+  PRIMARY KEY (id)
+)
