@@ -41,7 +41,7 @@
                         <label for="" class="required">Categoria</label>
                         <select class="form-control  form-file" id="cidade" name="cidade" required>
                             <?php foreach ($categorias as $categoria): ?>
-                                <option value="<?php echo $categoria->nome ?>"><?php echo $cidade->nome ?></option>
+                                <option value="<?php echo $categoria->nome ?>"><?php echo $categoria->nome ?></option>
                             <?php endforeach;?>
                         </select>
                     </div>
