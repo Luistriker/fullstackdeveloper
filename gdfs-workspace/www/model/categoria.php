@@ -21,6 +21,15 @@
 			return $stmt->execute();
 		}
 
+        public function buscarPorNome($nome){
+			$sql = "SELECT * FROM $this->table WHERE nome = :nome";
+			$stmt = DB::prepare($sql);
+			$stmt->bindParam(':nome', $nome);
+			$stmt->execute();
+			return $stmt->fetch(PDO::FETCH_ASSOC);
+		}
+
+
 		public function inserirTudo($nome, $bandeirada, $valorHora, $valorKm){
 			$this->nome = $nome;
             $this->bandeirada = $bandeirada;
