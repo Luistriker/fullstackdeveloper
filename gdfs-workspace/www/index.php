@@ -9,8 +9,11 @@
 </head>
 <body>
 <?php 
-    require_once("controller/calculo.php"); 
+    require_once("controller/calculo.php");
     require_once("classes/crud.php");
+    require_once("model/cidade.php");
+    $cidades = new cidade();
+    $cidades = $cidades->buscarTodos();
 ?>
 <main role="main">
     <div class="container mx-auto">
@@ -25,18 +28,25 @@
                 <form action="submit" class="container mt-4 contact-form-area" method="post">
                     <div class="form-group col">
                         <label for="" class="required">Cidade</label>
-                        <input type="text" class="form-control-file form-file" id="" placeholder="" name=""  required>
+                        <select class="form-control  form-file" id="" name="" required>
+                            <?php foreach ($cidades as $cidade): ?>
+                                <option value="<?php echo $cidade->nome ?>"><?php echo $cidade->nome ?></option>
+                            <?php endforeach;?>
+                        </select>
                     </div>
                     <div class="form-group col">
                         <label for="" class="required">Distância</label>
-                        <input type="number" step="0.01" class="form-control-file form-file" id="" placeholder="" name=""  required>
+                        <input type="number" step="0.01" class="form-control form-file" id="" placeholder="" name=""  required>
                     </div>
                     <div class="form-group col">
                         <label for="" class="required">Duração</label>
-                        <input type="number" step="0.01" class="form-control-file form-file" id="" placeholder="" name=""  required>
+                        <input type="number" step="0.01" class="form-control form-file" id="" placeholder="" name=""  required>
                     </div>
-                    
-                    <button style="background-color: green; color:antiquewhite;" type="submit" class="btn float-right mt-15" name="calcular">Calcular</button>
+                    <button style="background-color: green; color:#fff;" type="submit" class="btn float-right mt-15" name="calcular">Calcular</button>
+                    <br><br><br>
+                    <div style="background-color: #fff;" class="form-control form-filel">
+                        <p>Trajeto do <?php echo "" ?> até <?php echo "" ?> com valor de <?php echo "" ?></p>
+                    </div>
                 </form>
             </div>
         </div>

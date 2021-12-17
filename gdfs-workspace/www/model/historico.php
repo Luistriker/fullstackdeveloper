@@ -1,6 +1,6 @@
 <?php
 	require_once ("../classes/crud.php");
-    
+
 	class historico extends crud{
 		
         protected $table = 'historico';
@@ -16,12 +16,12 @@
 			$stmt = DB::prepare($sql);
 			$stmt->bindParam(':cidade', $this->cidade);
 			$stmt->bindParam(':horario', $this->horario);
-			$stmt->bindParam(':categoria', $this->ecategoria);
+			$stmt->bindParam(':categoria', $this->categoria);
 			$stmt->bindParam(':valor', $this->valor);
 			return $stmt->execute();
 		}
 
-		public function inserirTudo($cidade, $horario, $categoria, $valor ){
+		public function inserirTudo($cidade, $horario, $categoria, $valor){
 			$this->cidade = $cidade;
 			$this->horario = $horario;
 			$this->categoria = $categoria;

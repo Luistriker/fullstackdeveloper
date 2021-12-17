@@ -21,3 +21,8 @@ CREATE TABLE `categoria` (
   `valorKm` DECIMAL(6,2) NOT NULL,
   PRIMARY KEY (id)
 )
+
+INSERT INTO `cidade` (`nome`) VALUES 
+("Rio de Janeiro"), 
+("Brasilia"), 
+("Belo Horizonte");
