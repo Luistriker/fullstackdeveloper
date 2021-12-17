@@ -6,8 +6,10 @@
         $categoria = $_POST['categoria'];
         $distancia = $_POST['distancia'];
         $duracao = $_POST['duracao'];
-
         
+        
+        
+
 
     endif;
 

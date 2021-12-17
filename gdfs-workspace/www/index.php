@@ -10,7 +10,6 @@
 <body>
 <?php 
     require_once("controller/calculo.php");
-    require_once("classes/crud.php");
     require_once("model/cidade.php");
     require_once("model/categoria.php");
     $cidades = new cidade();
