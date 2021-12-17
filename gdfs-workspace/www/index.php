@@ -12,8 +12,11 @@
     require_once("controller/calculo.php");
     require_once("classes/crud.php");
     require_once("model/cidade.php");
+    require_once("model/categoria.php");
     $cidades = new cidade();
     $cidades = $cidades->buscarTodos();
+    $categorias = new categoria();
+    $categorias = $categorias->buscarTodos();
 ?>
 <main role="main">
     <div class="container mx-auto">
@@ -28,19 +31,27 @@
                 <form action="submit" class="container mt-4 contact-form-area" method="post">
                     <div class="form-group col">
                         <label for="" class="required">Cidade</label>
-                        <select class="form-control  form-file" id="" name="" required>
+                        <select class="form-control  form-file" id="cidade" name="cidade" required>
                             <?php foreach ($cidades as $cidade): ?>
                                 <option value="<?php echo $cidade->nome ?>"><?php echo $cidade->nome ?></option>
                             <?php endforeach;?>
                         </select>
                     </div>
                     <div class="form-group col">
+                        <label for="" class="required">Categoria</label>
+                        <select class="form-control  form-file" id="cidade" name="cidade" required>
+                            <?php foreach ($categorias as $categoria): ?>
+                                <option value="<?php echo $categoria->nome ?>"><?php echo $cidade->nome ?></option>
+                            <?php endforeach;?>
+                        </select>
+                    </div>
+                    <div class="form-group col">
                         <label for="" class="required">Distância</label>
-                        <input type="number" step="0.01" class="form-control form-file" id="" placeholder="" name=""  required>
+                        <input type="number" step="0.01" class="form-control form-file" id="distancia" placeholder="distancia" name="distancia"  required>
                     </div>
                     <div class="form-group col">
                         <label for="" class="required">Duração</label>
-                        <input type="number" step="0.01" class="form-control form-file" id="" placeholder="" name=""  required>
+                        <input type="number" step="0.01" class="form-control form-file" id="duracao" placeholder="duracao" name="duracao"  required>
                     </div>
                     <button style="background-color: green; color:#fff;" type="submit" class="btn float-right mt-15" name="calcular">Calcular</button>
                     <br><br><br>

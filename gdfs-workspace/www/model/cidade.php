@@ -16,7 +16,7 @@
 		}
 
 		public function inserirTudo($nome){
-			$this->cidade = $nome;
+			$this->nome = $nome;
 			
 		}
 

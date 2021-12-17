@@ -26,3 +26,8 @@ INSERT INTO `cidade` (`nome`) VALUES
 ("Rio de Janeiro"), 
 ("Brasilia"), 
 ("Belo Horizonte");
+
+INSERT INTO `categoria` (`nome`, `bandeira`, `valorHora`, `valorKm`) VALUES 
+("Normal", 2, 12, 2), 
+("Comfort", 4, 17, 3), 
+("Executivo", 6, 20, 4);
