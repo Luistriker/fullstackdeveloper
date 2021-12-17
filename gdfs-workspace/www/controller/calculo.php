@@ -6,8 +6,8 @@
 
         $cidade = $_POST['cidade'];
         $categoria = $_POST['categoria'];
-        $distancia = $_POST['distancia'];
-        $duracao = $_POST['duracao'];
+        $distancia = intval($_POST['distancia']);
+        $duracao = (intval($_POST['duracao'])) / 60;
         
         $valores = new categoria();
         $valores = $categorias->buscarPorNome($categoria);
@@ -17,7 +17,8 @@
         $valorKm = $valores->valorKm;
         
         // Calculo
-        
+
+        $tarifa = $bandeirada + ($valorHora * $duracao) + ($valorKm * $distancia);
 
 
     endif;

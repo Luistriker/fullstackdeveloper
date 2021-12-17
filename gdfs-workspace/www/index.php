@@ -49,10 +49,9 @@
                         <input type="number" step="0.01" class="form-control form-file" id="distancia" placeholder="distancia" name="distancia"  required>
                     </div>
                     <div class="form-group col">
-                        <label for="" class="required">Duração</label>
+                        <label for="" class="required">Duração em minutos</label>
                         <input type="number" step="0.01" class="form-control form-file" id="duracao" placeholder="duracao" name="duracao"  required>
                     </div>
-                    
                     <button style="background-color: green; color:#fff;" type="submit" class="btn float-right mt-15" name="calcular">Calcular</button>
                     <br><br><br>
                     <div style="background-color: #fff;" class="form-control form-filel">
